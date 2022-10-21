@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/anasayfaFragment">
+
+    <fragment
+        android:id="@+id/anasayfaFragment"
+        android:name="com.example.todoapp.ui.fragment.AnasayfaFragment"
+        android:label="fragment_anasayfa"
+        tools:layout="@layout/fragment_anasayfa" >
+        <action
+            android:id="@+id/gorevDetayGecis"
+            app:destination="@id/gorevDetayFragment" />
+        <action
+            android:id="@+id/gorevKayitGecis"
+            app:destination="@id/gorevEkleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gorevDetayFragment"
+        android:name="com.example.todoapp.ui.fragment.GorevDetayFragment"
+        android:label="fragment_gorev_detay"
+        tools:layout="@layout/fragment_gorev_detay" >
+        <argument
+            android:name="gorev"
+            app:argType="com.example.todoapp.data.entity.Gorevler" />
+    </fragment>
+    <fragment
+        android:id="@+id/gorevEkleFragment"
+        android:name="com.example.todoapp.ui.fragment.GorevEkleFragment"
+        android:label="fragment_gorev_ekle"
+        tools:layout="@layout/fragment_gorev_ekle" />
+</navigation>
